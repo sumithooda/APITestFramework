@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sanity Suite">
+    <parameter name="BaseURI" value="https://jsonplaceholder.typicode.com"/>
+    <parameter name="UserName" value="Kamren"/>
+    <test name="Integration test">
+        <classes>
+            <class name="tests.IntegrationTest">
+                <methods>
+                    <include name="findUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
