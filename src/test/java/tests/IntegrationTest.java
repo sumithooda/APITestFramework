@@ -34,9 +34,7 @@ public class IntegrationTest extends TestBase {
     public void getPosts() {
         Response response = CommonActions.performGet(CommonActions.PostContext, "userId", user[0].getId());
         response.then().statusCode(200);
-
         posts = response.getBody().as(Posts[].class);
-        Assert.assertEquals(posts[0].getUserId(),Integer.parseInt(userId),"User id for "+userName+"is not correct");
         System.out.println("Number of posts available for user " + userName + " are " + posts.length);
     }
 

@@ -8,8 +8,6 @@ import org.testng.ITestContext;
 public class TestBase {
 
     public String userName;
-    public String userId;
-
     /**
      * fetching application base url, username form testng.xml file
      * @param context
@@ -18,8 +16,6 @@ public class TestBase {
     public void beforeClass(ITestContext context) {
         RestAssured.baseURI = context.getCurrentXmlTest().getParameter("BaseURI");
         userName=context.getCurrentXmlTest().getParameter("UserName");
-        userId =context.getCurrentXmlTest().getParameter("UserId");
-
         Reporter.log("", true);
     }
 
