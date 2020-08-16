@@ -6,9 +6,6 @@
     <test name="Integration test">
         <classes>
             <class name="tests.IntegrationTest">
-                <methods>
-                    <include name="findUser"/>
-                </methods>
             </class>
         </classes>
     </test>
