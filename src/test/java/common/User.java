@@ -3,7 +3,7 @@ package common;
 public class User {
     public int id;
     public String name;
-    public String userName;
+    public String username;
     public String email;
    // public String address;
     public String phone;
@@ -19,7 +19,7 @@ public class User {
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
     public String getEmail() {
