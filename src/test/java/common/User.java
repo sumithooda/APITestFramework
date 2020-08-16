@@ -1,14 +1,16 @@
 package common;
 
+import com.google.gson.JsonObject;
+
 public class User {
     public int id;
     public String name;
     public String username;
     public String email;
-   // public String address;
+    public JsonObject address;
     public String phone;
     public String website;
-    //public String company;
+    public JsonObject company;
 
     public int getId() {
         return id;
@@ -26,9 +28,9 @@ public class User {
         return email;
     }
 
-//    public String getAddress() {
-//        return address;
-//    }
+    public JsonObject getAddress() {
+       return address;
+    }
 
     public String getPhone() {
         return phone;
@@ -38,7 +40,7 @@ public class User {
         return website;
     }
 
-//    public String getCompany() {
-//        return company;
-//    }
+    public JsonObject getCompany() {
+        return company;
+    }
 }
