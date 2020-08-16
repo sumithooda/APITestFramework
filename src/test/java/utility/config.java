@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Class to read properties file
+ */
 public class config {
     private Properties getProperties() {
         Properties properties = new Properties();

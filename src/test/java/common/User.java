@@ -2,6 +2,9 @@ package common;
 
 import com.google.gson.JsonObject;
 
+/**
+ * Pojo class for User call
+ */
 public class User {
     public int id;
     public String name;

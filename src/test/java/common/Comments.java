@@ -1,7 +1,13 @@
 package common;
 
+/**
+ * Pojo class for Comment response
+ */
 public class Comments {
 
+    /**
+     * attribute to store values from get comment response
+     */
     public int postId;
     public int id;
     public String name;

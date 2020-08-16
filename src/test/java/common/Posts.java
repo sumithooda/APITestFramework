@@ -1,5 +1,8 @@
 package common;
 
+/**
+ * Pojo class for Posts call
+ */
 public class Posts {
     public int userId;
     public int id;
