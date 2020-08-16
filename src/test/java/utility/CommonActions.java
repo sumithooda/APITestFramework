@@ -7,10 +7,10 @@ import static io.restassured.RestAssured.given;
 
 public class CommonActions {
 
-    Response perfromGet(String context, String queryParam, String paramValue){
-        Response response = given().queryParam(queryParam,paramValue).when().get("/"+context+"");
+    public static Response  performGet(String context, String queryParam, Object paramValue){
+        Response response = given().queryParam(queryParam,paramValue).when().get(context);
         response.then().statusCode(200);
-        System.out.println("Performing get to" + RestAssured.baseURI + context);
+        System.out.println("Performing get to " + RestAssured.baseURI + context+"?"+queryParam+"="+paramValue);
         return response;
     }
     public static boolean validateEmail(String email){

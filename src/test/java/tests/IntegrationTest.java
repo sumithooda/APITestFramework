@@ -19,18 +19,16 @@ public class IntegrationTest extends TestBase {
 
     @Test(priority = 1)
     public void findUser() {
-        Response response = given().queryParam("username", userName).when().get("/users");
+        Response response = CommonActions.performGet("/users","username", userName);
         response.then().statusCode(200);
         user = response.getBody().as(User[].class);
         Assert.assertTrue(user.length == 1, "More than one user is present with " + userName);
         System.out.println(user[0].getUserName());
-
-
     }
 
     @Test(priority = 2)
     public void getPosts() {
-        Response response = given().queryParam("userId", user[0].getId()).when().get("/posts");
+        Response response = CommonActions.performGet("/posts","userId", user[0].getId());
         response.then().statusCode(200);
         posts = response.getBody().as(Posts[].class);
         System.out.println("Number of posts available for user " + userName + " are " + posts.length);
@@ -39,7 +37,7 @@ public class IntegrationTest extends TestBase {
     @Test(priority = 3)
     public void getComments() {
         for (Posts currentPosts : posts) {
-            Response response = given().queryParam("postId", currentPosts.getId()).when().get("/comments");
+            Response response = CommonActions.performGet("/comments","postId", currentPosts.getId());
             response.then().statusCode(200);
             comments = response.getBody().as(Comments[].class);
             System.out.println("total commnets on post " + currentPosts.getId() + " = " + comments.length);
