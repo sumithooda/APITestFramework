@@ -6,12 +6,6 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 
 public class CommonActions {
-    /**
-     * Fetching property values from property file
-     */
-    public static String userContext = new config().getProperrty("contextUser");
-    public static String PostContext = new config().getProperrty("contextPost");
-    public static String commentContext = new config().getProperrty("contextComments");
 
     /**
      * Perform Get operation

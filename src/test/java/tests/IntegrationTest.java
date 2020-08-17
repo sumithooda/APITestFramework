@@ -11,6 +11,7 @@ import io.restassured.RestAssured;
 import utility.CommonActions;
 
 public class IntegrationTest extends TestBase {
+    //Pojo class objects @global to use throughout test class
     User[] user;
     Posts[] posts;
     Comments[] comments;
@@ -20,7 +21,7 @@ public class IntegrationTest extends TestBase {
      */
     @Test(priority = 1)
     public void findUser() {
-        Response response = CommonActions.performGet(CommonActions.userContext, "username", userName);
+        Response response = CommonActions.performGet(prop.get("contextUser"), "username", userName);
         response.then().statusCode(200);
         user = response.getBody().as(User[].class);
         Assert.assertTrue(user.length == 1, "More than one user is present with " + userName);
@@ -32,7 +33,7 @@ public class IntegrationTest extends TestBase {
      */
     @Test(priority = 2, dependsOnMethods = {"findUser"})
     public void getPosts() {
-        Response response = CommonActions.performGet(CommonActions.PostContext, "userId", user[0].getId());
+        Response response = CommonActions.performGet(prop.get("contextPost"), "userId", user[0].getId());
         response.then().statusCode(200);
         posts = response.getBody().as(Posts[].class);
         System.out.println("Number of posts available for user " + userName + " are " + posts.length);
@@ -44,7 +45,7 @@ public class IntegrationTest extends TestBase {
     @Test(priority = 3, dependsOnMethods = {"getPosts"})
     public void getComments() {
         for (Posts currentPosts : posts) {
-            Response response = CommonActions.performGet(CommonActions.commentContext, "postId", currentPosts.getId());
+            Response response = CommonActions.performGet(prop.get("contextComments"), "postId", currentPosts.getId());
             response.then().statusCode(200);
             comments = response.getBody().as(Comments[].class);
             System.out.println("total commnets on post " + currentPosts.getId() + " = " + comments.length);

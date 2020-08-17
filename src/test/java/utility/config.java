@@ -9,7 +9,7 @@ import java.util.Properties;
  * Class to read properties file
  */
 public class config {
-    private Properties getProperties() {
+    public static Properties getProperties() {
         Properties properties = new Properties();
         InputStream input = null;
         try {
@@ -28,9 +28,5 @@ public class config {
 
         }
         return properties;
-    }
-
-    public String getProperrty(String propName) {
-        return getProperties().getProperty(propName);
     }
 }
