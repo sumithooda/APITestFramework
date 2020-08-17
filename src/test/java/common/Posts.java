@@ -4,10 +4,10 @@ package common;
  * Pojo class for Posts call
  */
 public class Posts {
-    public int userId;
-    public int id;
-    public String title;
-    public String body;
+    private int userId;
+    private int id;
+    private String title;
+    private String body;
 
     public int getUserId() {
         return userId;

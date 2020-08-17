@@ -6,14 +6,14 @@ import com.google.gson.JsonObject;
  * Pojo class for User call
  */
 public class User {
-    public int id;
-    public String name;
-    public String username;
-    public String email;
-    public JsonObject address;
-    public String phone;
-    public String website;
-    public JsonObject company;
+    private int id;
+    private String name;
+    private String username;
+    private String email;
+    private JsonObject address;
+    private String phone;
+    private String website;
+    private JsonObject company;
 
     public int getId() {
         return id;

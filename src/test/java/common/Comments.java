@@ -8,11 +8,11 @@ public class Comments {
     /**
      * attribute to store values from get comment response
      */
-    public int postId;
-    public int id;
-    public String name;
-    public String email;
-    public String body;
+    private int postId;
+    private int id;
+    private String name;
+    private String email;
+    private String body;
 
     public int getPostId() {
         return postId;
