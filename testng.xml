@@ -2,11 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Integration Test">
     <parameter name="BaseURI" value="https://jsonplaceholder.typicode.com"/>
-    <parameter name="UserName" value="Kamren"/>
+    <parameter name="validUserName" value="Kamren"/>
+    <parameter name="invalidUserName" value="InvalidName"/>
     <test name="Integration test">
         <classes>
-            <class name="tests.IntegrationTest">
-            </class>
+            <class name="tests.IntegrationTest"></class>
+            <class name="tests.sanityTest"></class>
         </classes>
     </test>
 </suite>
