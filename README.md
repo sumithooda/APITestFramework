@@ -16,13 +16,13 @@ run testng.xml file
 ###prerequisites : 
 1. Jenkins is up and running locally/centralised
 2. Build pipline configured with this git repository url
-3. for publish result install "report" plugin
+3. for publish result install "HTMLPublisher" plugin
 
 Project root have a jenkins file contains all stages(compile, test, publish result) of pipeline execution.
 ###Break down into tests 
 tests directory have 2 test classes
 1. IntegrationTest - it contains 3 tests to fetch user(based on test data), fetch all post of that user, verify comments for all posts.
-2. sanityTest - it contains to check response of service for different scenarios.
+2. sanityTest - it contains tests to check response of service for different scenarios.
 
 Note: focus wasn't on making it data driven, thats why testng.xml file is used to pass data to tests.
 
