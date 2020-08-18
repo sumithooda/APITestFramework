@@ -15,6 +15,7 @@ import java.util.Map;
 public class TestBase {
 
     public String userName;
+    public String invalidusername;
     //Hashmap to store property values
     public Map<String, String> prop = new HashMap<String, String>();
 
@@ -23,10 +24,14 @@ public class TestBase {
      *
      * @param context
      */
-    @BeforeSuite
+    @BeforeClass
     public void beforeClass(ITestContext context) {
-        RestAssured.baseURI = context.getCurrentXmlTest().getParameter("BaseURI");
-        userName = context.getCurrentXmlTest().getParameter("UserName");
+        String baseUri = context.getCurrentXmlTest().getParameter("BaseURI");
+        RestAssured.baseURI = baseUri;
+        Reporter.log("BaseURI " + baseUri, true);
+        userName = context.getCurrentXmlTest().getParameter("validUserName");
+        invalidusername=context.getCurrentXmlTest().getParameter("invalidUserName");
+        Reporter.log("userName " + userName, true);
         getProperties();
     }
 
